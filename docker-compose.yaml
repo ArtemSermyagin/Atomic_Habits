@@ -40,7 +40,7 @@ services:
   celery:
     build: .
     tty: true
-    command: celery -A DRF worker -l INFO
+    command: celery -A Atomic_Habits worker -l INFO
     depends_on:
       - redis
       - app
@@ -48,7 +48,7 @@ services:
   celery_beat:
     build: .
     tty: true
-    command: celery -A DRF beat -l INFO
+    command: celery -A Atomic_Habits beat -l INFO
     depends_on:
       - redis
       - app
